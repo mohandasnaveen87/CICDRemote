@@ -64,7 +64,8 @@ pipeline {
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 				    environments: "",
 	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+	                //credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+					credentials: ExternalApp(accountForApp: "${UIPATH_ORCH_LOGICAL_NAME}", applicationId: "d3a82d57-9e17-4461-9735-0123b1b97094",applicationSecret: 'AppSecret',applicationScope: "OR.Monitoring.Read OR.TestSetSchedules OR.TestSetExecutions.Write OR.TestSetSchedules.Read OR.Analytics.Read OR.Tasks OR.Tasks.Read OR.Tasks.Write OR.Analytics OR.TestSetExecutions.Read OR.Analytics.Write OR.Folders OR.Folders.Read OR.Folders.Write OR.BackgroundTasks OR.BackgroundTasks.Read OR.BackgroundTasks.Write OR.TestSets OR.TestSets.Read OR.TestSets.Write OR.TestSetExecutions OR.ML OR.ML.Write OR.ML.Read OR.Assets.Write OR.Queues OR.Queues.Read OR.Queues.Write OR.Jobs OR.Jobs.Read OR.Jobs.Write OR.Users OR.Assets.Read OR.Users.Read OR.Administration OR.Administration.Read OR.Administration.Write OR.Audit OR.Audit.Read OR.Audit.Write OR.Webhooks OR.Webhooks.Read OR.Users.Write OR.Assets OR.Execution.Write OR.License OR.License.Read OR.License.Write OR.Settings OR.Settings.Read OR.Settings.Write OR.Robots OR.Robots.Read OR.Robots.Write OR.Machines OR.Machines.Read OR.Machines.Write OR.Execution OR.Webhooks.Write OR.Monitoring OR.Execution.Read OR.Monitoring.Write OR.TestSetSchedules.Write OR.TestDataQueues OR.TestDataQueues.Read OR.TestDataQueues.Write OR.Hypervisor OR.Hypervisor.Read OR.Hypervisor.Write",identityUrl:"https://cloud.uipath.com/identity/connect/token"),
 					traceLevel: 'None',
 					entryPointPaths: 'Main.xaml'
 	
